@@ -1,8 +1,8 @@
-# MkDocksとAzure DevOpsでCI/CD環境を整える
+# MkDocsとAzure DevOpsでCI/CD環境を整える
 
 ## はじめに
 
-[前回](../MkDocksでドキュメントを作成する環境を整える)ドキュメントを作成するための環境を整えましたが、引き続き複数人でドキュメントを管理していく方法を考えます。  
+[前回](../MkDocsでドキュメントを作成する環境を整える)ドキュメントを作成するための環境を整えましたが、引き続き複数人でドキュメントを管理していく方法を考えます。  
 merkdown形式でドキュメントが作成できるようになったので、ExcelやWordに比べて差分チェックが容易になりました。  
 というわけでGitで管理しましょう、GitHub(クローン)を利用してGitHub Flowで運用するとレビューもやりやすくなってステキです。  
 ドキュメントに対するレビュー文化を根付かせることで不可解な仕様を事前に指摘＆排除できるようにしましょう。  
@@ -30,7 +30,7 @@ PullRequestをトリガーとするので`Default branch for manual and schedule
 
 #### Select a template
 
-MkDocks用のテンプレートがあるわけではないので空のテンプレートを選択します。  
+MkDocs用のテンプレートがあるわけではないので空のテンプレートを選択します。  
 ![Select a template](./images/Environment-cicd_002.PNG)
 
 #### Pipeline
@@ -46,9 +46,9 @@ MkDocks用のテンプレートがあるわけではないので空のテンプ�
 
 #### Agent Job
 
-##### MkDocksでビルドする
+##### MkDocsでビルドする
 
-PowerShellタスクを追加し、InlineにMkDocksをビルドするためのScriptを記載するか、ScriptファイルのPathを設定します。  
+PowerShellタスクを追加し、InlineにMkDocsをビルドするためのScriptを記載するか、ScriptファイルのPathを設定します。  
 ![Add PowerShell](./images/Environment-cicd_005.PNG)
 ![PowerShell](./images/Environment-cicd_006.PNG)
 
