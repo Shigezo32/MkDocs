@@ -137,3 +137,11 @@ PullRequest作成時に自動でビルドするときと同様に`PipeLines > Bu
 
 * [リポジトリ(GitHub)](https://github.com/Shigezo32/DocsSample)
 * [デプロイ先(Azure App Service)](https://mkdocs-sample.azurewebsites.net)
+
+## TODO
+
+* 画像の差し替え
+* markdownlintのルール設定
+* textlintの利用とルール設定
+* PlantUMLを利用した図の作成
+* 特定のファイルが更新されたときのみ動作するパイプラインの設定
