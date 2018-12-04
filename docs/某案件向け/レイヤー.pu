@@ -1,0 +1,85 @@
+@startuml
+title 呼び出し順序
+View ->> Application:
+Application ->> Domain:
+Domain ->> Infrastructure:
+Infrastructure ->> ExternalSystem:
+Infrastructure <<-- ExternalSystem:
+Domain <<-- Infrastructure:
+Application <<-- Domain:
+View <<-- Application:
+@enduml
+
+@startuml
+title プロジェクトの依存関係
+
+' 共通
+' object "Resource" as Resource
+' Resource <.. View
+' Resource <.. Application
+' Resource <.. Domain
+' Resource <.. Infrastructure
+' Resource <.. DependencyInjection
+' note bottom of Resource
+'   Resource はすべてのプロジェクトから参照される。
+' endnote
+
+' aa
+object "View" as View
+object "Application" as Application
+object "DependencyInjection" as DependencyInjection
+object "Domain" as Domain
+object "Domain.ServiceDefinition" as Domain.ServiceDefinition
+object "Infrastructure" as Infrastructure
+object "Infrastructure.ServiceDefinition" as Infrastructure.ServiceDefinition
+object "ExternalSystem" as ExternalSystem
+object "ExternalSystem.ServiceDefinition" as ExternalSystem.ServiceDefinition
+
+Application ..> DependencyInjection : <<call (initialize)>>
+DependencyInjection ..> Domain.ServiceDefinition : <<refer>>
+DependencyInjection ..> Domain : <<refer>>
+DependencyInjection ..> Infrastructure.ServiceDefinition : <<refer>>
+DependencyInjection ..> Infrastructure : <<refer>>
+
+note left of DependencyInjection
+  構成ファイルから Dependency Injection をするときに
+  対象の Assembly を Load している必要がある。
+  Application で行うと結合度が強くなるため、
+  Dependency Injection を行うためだけのプロジェクトを間に挟む。
+endnote
+
+Application ..> Domain.ServiceDefinition : <<call (gRPC)>>
+
+Domain.ServiceDefinition <|.. Domain : <<implement>>
+Domain ..> Infrastructure.ServiceDefinition : <<call (gRPC)>>
+
+Infrastructure.ServiceDefinition <|.. Infrastructure : <<implement>>
+Infrastructure ..> ExternalSystem.ServiceDefinition : <<call>>
+
+ExternalSystem.ServiceDefinition <|.. ExternalSystem : <<implement>>
+
+note right of ExternalSystem.ServiceDefinition
+  外部システムを呼び出すためのサービス定義と実装は
+  他社にソースコードレベルでの公開が可能なよう分割する
+endnote
+
+note right of ExternalSystem
+  ここで実際に外部システムを呼び出す。
+endnote
+
+note bottom of View
+  View はどのプロジェクトにも依存しない。
+  Application へは http 経由で呼び出すため、
+  プロジェクトの依存関係は存在しない。
+endnote
+
+' デバッグ用
+' object "Domain.HttpGateway" as Domain.HttpGateway
+' object "Infrastructure.HttpGateway" as Infrastructure.HttpGateway
+' Domain.HttpGateway .> Domain.ServiceDefinition : <<refer>>
+' Domain.HttpGateway .> Domain : <<call (http)>>
+' Infrastructure.HttpGateway .> Infrastructure.ServiceDefinition : <<refer>>
+' Infrastructure.HttpGateway .> Infrastructure : <<call (http)>>
+
+@enduml
+

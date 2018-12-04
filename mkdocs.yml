@@ -14,7 +14,9 @@ extra:
     font:
         text: "Noto Sans JP"
         code: "Consolas"
-
-
-
+markdown_extensions:
+    - admonition
+    - codehilite
+    - footnotes
+    - pymdownx.keys
 
