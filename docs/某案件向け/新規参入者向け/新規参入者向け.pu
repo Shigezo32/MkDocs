@@ -32,6 +32,7 @@ object "Domain" as Domain
 object "Domain.ServiceDefinition" as Domain.ServiceDefinition
 object "Infrastructure" as Infrastructure
 object "Infrastructure.ServiceDefinition" as Infrastructure.ServiceDefinition
+object "Database" as Database
 object "ExternalSystem" as ExternalSystem
 object "ExternalSystem.ServiceDefinition" as ExternalSystem.ServiceDefinition
 
@@ -54,6 +55,7 @@ Domain.ServiceDefinition <|.. Domain : <<implement>>
 Domain ..> Infrastructure.ServiceDefinition : <<call (gRPC)>>
 
 Infrastructure.ServiceDefinition <|.. Infrastructure : <<implement>>
+Infrastructure .> Database : <<refer>>
 Infrastructure ..> ExternalSystem.ServiceDefinition : <<call>>
 
 ExternalSystem.ServiceDefinition <|.. ExternalSystem : <<implement>>
