@@ -1,22 +1,54 @@
-site_name: My Docs
+# Project information
+site_name: 'Shigezo Docs'
+site_description: '個人用ドキュメント置き場。'
+site_author: 'Shigezo.'
+site_url: 'https://mkdocs-sample.azurewebsites.net/'
+
+# Repository
+repo_name: 'Shigezo32/DocsSample'
+repo_url: 'https://github.com/Shigezo32/DocsSample'
+
+# Copyright
+copyright: 'Copyright &copy; 2018 Shigezo.'
+
+# Configuration
 theme:
-  name: material
-  language: 'ja'
-  feature:
-    tabs: true
-extra_css:
-    - "https://fonts.googleapis.com/earlyaccess/notosansjp.css"
-    - "https://fonts.googleapis.com/css?family=Open+Sans:600,800"
-    - "css/custom.css"
+    name: material
+    language: 'ja'
+    palette:
+        primary: 'indigo'
+        accent: 'indigo'
+    font:
+        text: 'Roboto'
+        code: 'Roboto Mono'
+    feature:
+        tabs: true
+
+# Customization
 extra:
     search:
         language: 'jp'
     font:
         text: "Noto Sans JP"
         code: "Consolas"
+
+extra_css:
+    - "https://fonts.googleapis.com/earlyaccess/notosansjp.css"
+    - "https://fonts.googleapis.com/css?family=Open+Sans:600,800"
+    - "css/custom.css"
+
+# Extensions
 markdown_extensions:
     - admonition
+    - attr_list
     - codehilite
     - footnotes
     - pymdownx.keys
-
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.superfences
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tilde
+    - toc:
+        permalink: true
