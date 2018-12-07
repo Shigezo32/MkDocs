@@ -1,10 +1,11 @@
-# 環境構築
+# 環境構築トップ
 
 ## プロジェクトに関わるすべての人が対象
 
 ### Git
 
 * [Git for Windows](https://gitforwindows.org/)
+    * [インストール手順](./GitforWindowsのインストール)
 * [TortoiseGit](https://tortoisegit.org/)
     * 必須ではないので好みで選んでいい
     * よく聞く Git クライアントだと [Sourcetree](https://ja.atlassian.com/software/sourcetree) や [GitHub Desktop](https://desktop.github.com/) など
