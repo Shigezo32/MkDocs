@@ -7,23 +7,28 @@
 * [Git for Windows](https://gitforwindows.org/)
     * [インストール手順](./GitforWindowsのインストール)
 * [TortoiseGit](https://tortoisegit.org/)
+    * [インストール手順](./TortoiseGitのインストールと設定)
     * 必須ではないので好みで選んでいい
     * よく聞く Git クライアントだと [Sourcetree](https://ja.atlassian.com/software/sourcetree) や [GitHub Desktop](https://desktop.github.com/) など
 * [WinMerge](http://winmerge.org/)
+    * [インストール手順](./WinMergeのインストール)
     * 必須ではない、差分ビューアーを変更したい場合のみ
 
 ### Docker
 
 * [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
+    * [インストール手順](./DockerforWindowsのインストールと設定)
 * [Kitematic](https://kitematic.com/)
     * 必須ではない Image と Container の状態を GUI で見たいだけなら Visual Studio Code の Docker 拡張機能が便利
 
 ### Visual Studio Code
 
 * [Visual Studio Code](https://code.visualstudio.com/download)
+    * [インストール手順](./VisualStudioCodeのインストール)
 
 #### 拡張機能
 
+* [Japanese Language Pack for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja)
 * [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 * [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
 * [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
@@ -37,8 +42,10 @@
 ### その他
 
 * [Java](https://www.java.com/ja/)
+    * [インストール手順](./Javaのインストール)
     * UMLを書く場合は必須
 * [Graphviz](http://www.graphviz.org/)
+    * [インストール手順](./Graphvizのインストール)
     * UMLを書く場合は必須
 * [Azure Storage Explorer](https://azure.microsoft.com/ja-jp/features/storage-explorer/)
     * 必須ではない、スタブデータを差し替える場合に利用する
