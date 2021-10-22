@@ -1,0 +1,72 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - docs/*
+pr: none
+
+variables:
+  VmImageName: ubuntu-20.04
+  Python.Version: 3.x
+  Azure.ServiceConnectionId: a7c86f12-9f60-4544-a93d-4f8187d629e0
+  Azure.WebAppName: mkdocs-sample
+  Azure.ResourceGroupName: mkdocs-sample
+
+stages:
+  - stage: Build
+    displayName: Build stage
+
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: $(VmImageName)
+
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: $(Python.Version)
+
+          - task: Bash@3
+            displayName: Build MkDocs
+            inputs:
+              targetType: inline
+              script: |
+                pip install mkdocs
+                pip install mkdocs-material
+                mkdocs build
+                ls ./site
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish Pipeline Artifact
+            inputs:
+              targetPath: site
+              artifact: drop
+
+  - stage: Deploy
+    displayName: Deploy stage
+    dependsOn: Build
+    condition: succeeded()
+
+    jobs:
+      - deployment: Deploy
+        displayName: Deploy
+        environment: development
+        pool:
+          vmImage: $(VmImageName)
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureRmWebAppDeployment@4
+                  displayName: Deploy
+                  inputs:
+                    ConnectionType: AzureRM
+                    azureSubscription: $(Azure.ServiceConnectionId)
+                    appType: webApp
+                    Package: $(Pipeline.Workspace)/drop
+                    WebAppName: $(Azure.WebAppName)
+                    ResourceGroupName: $(Azure.ResourceGroupName)
