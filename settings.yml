@@ -1,0 +1,8 @@
+# フォルダ名は英語、表示は日本語にしたいときに書いておく。
+# create_mkdocs_pages.py で使用。
+# この情報をもとに .pages を自動生成する。
+# mkdocsのプラグインとかではなく、自分のスクリプト用の情報
+replace_foldername:
+  - before: 変更後
+
+repo_url: https://github.com/Shigezo32/DocsSample
