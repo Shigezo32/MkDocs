@@ -1,26 +1,20 @@
-/*
-この方の css をほぼ丸パクリしました！
-https://blog.kurokobo.com/archives/2952
-*/
-
 .md-typeset h1 {
     font-weight: bold;
     color: rgba(0, 0, 0, .87);
-    border-bottom: solid 2px #1A237E;
+    border-bottom: 2px solid var(--md-primary-fg-color--dark);
     padding-bottom: .1em;
 }
 
 .md-typeset h2 {
-    border-bottom: 1px dotted #1A237E;
+    border-bottom: 1px solid var(--md-primary-fg-color--dark);
 }
 
 .md-typeset h3 {
-    border-bottom: 1px dotted #757575;
+    border-bottom: 1px dotted var(--md-primary-fg-color--dark);
 }
 
 .md-typeset h4 {
     font-weight: 400;
-    border-bottom: 1px solid hsla(0, 0%, 92.5%, .5);
 }
 
 .md-typeset> ::before {
@@ -31,27 +25,31 @@ https://blog.kurokobo.com/archives/2952
 }
 
 .md-typeset h1::before {
-    content: "\f02d" !important;
+    content: "\f1b0" !important;
+    color: var(--md-primary-fg-color--dark);
 }
 
 .md-typeset h2::before {
     content: "\f0a9" !important;
+    color: var(--md-primary-fg-color--dark);
 }
 
 .md-typeset h3::before {
-    content: "\f101" !important;
+    content: "\f061" !important;
+    color: var(--md-primary-fg-color--dark);
 }
 
 .md-typeset h4::before {
-    content: "\f054" !important;
+    content: "\f0da" !important;
+    color: var(--md-primary-fg-color);
 }
 
 .md-typeset h5::before {
-    content: "\f054" !important;
+    content: "\f0da" !important;
 }
 
 .md-typeset h6::before {
-    content: "\f054" !important;
+    content: "\f0da" !important;
 }
 
 .md-typeset a:not([class])::before {

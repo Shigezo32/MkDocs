@@ -11,6 +11,9 @@ repo_url: https://github.com/Shigezo32/DocsSample
 # Copyright
 copyright: Copyright &copy; 2018-2021 Shigezo.
 
+# ディレクトリを指定することでビルド対象のドキュメントを絞れます
+# docs_dir: docs/01_Profile
+
 # Configuration
 theme:
     # favicon: favicon.ico
@@ -19,7 +22,7 @@ theme:
     name: material
     palette:
         primary: indigo
-        accent: indigo
+        accent: red
     features:
         # index.md をセクションに統合
         - navigation.indexes
@@ -30,7 +33,7 @@ theme:
         # ルート直下をタブで表示
         - navigation.tabs
         # 左の記事一覧をデフォルトで開いた状態に
-        - navigation.expand 
+        - navigation.expand
     icon:
         repo: fontawesome/brands/github
 
@@ -61,7 +64,7 @@ plugins:
     # Git の Commit 時間をページに表示
     - git-revision-date-localized:
           type: iso_datetime
-        #   locale: ja
+          locale: ja
     # Tag
     - mdoctag:
           tagpage_dir: Tags
@@ -80,16 +83,6 @@ plugins:
 
 # Extensions
 markdown_extensions:
-    # HBFM (Markdown 拡張)
-    # https://github.com/heartbeatsjp/markdown-extension-hbfm
-    - hbfm.inline_coloring
-    - hbfm.inline_list
-    - toc:
-          slugify: !!python/name:hbfm.toc.slugify
-          # 見出しにパーマリンクを設定
-          permalink: true
-    - hbfm.number_headers
-    - hbfm.quote_uri_hash
     # アラート装飾
     # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types
     - admonition
@@ -117,8 +110,11 @@ markdown_extensions:
           linenums: true
     # 絵文字
     - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
+          emoji_index: !!python/name:materialx.emoji.twemoji
+          emoji_generator: !!python/name:materialx.emoji.to_svg
     # チェックボックス付きリスト
     - pymdownx.tasklist:
           custom_checkbox: true
+    # 見出しにパーマリンクを設定
+    - toc:
+          permalink: true
