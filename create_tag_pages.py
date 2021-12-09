@@ -61,7 +61,7 @@ def create_pages(root_path):
 
     tags = list(set(tags))
     # ページを作る
-    tagDir = os.getcwd() + "/docs/tags"
+    tagDir = os.getcwd() + "/docs/Tags"
     os.makedirs(tagDir, exist_ok=True)
     for tag in tags:
         with open(f"{tagDir}/{tag}.md", 'w') as f:

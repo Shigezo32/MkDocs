@@ -62,10 +62,6 @@
     border-bottom: 1px dotted #757575;
 }
 
-.md-typeset>p {
-    text-indent: 1em;
-}
-
 .md-typeset>div.admonition {
     margin-left: 1em !important;
 }

@@ -22,6 +22,16 @@
             "label": "stop",
             "type": "shell",
             "command": "docker stop mkdocs"
+        },
+        {
+            "label": "create_tag_pages",
+            "type": "shell",
+            "command": "docker exec mkdocs python create_tag_pages.py"
+        },
+        {
+            "label": "create_mkdocs_pages",
+            "type": "shell",
+            "command": "docker exec mkdocs python create_mkdocs_pages.py"
         }
     ]
 }
