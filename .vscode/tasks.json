@@ -5,7 +5,7 @@
             "label": "serve",
             "type": "shell",
             "isBackground": true,
-            "command": "docker run --rm -it -p 8000:8000 -v ${PWD}:/docs --name=mkdocs squidfunk/mkdocs-material",
+            "command": "docker run --rm -it -p 8000:8000 -v ${PWD}:/docs --name=mkdocs shigezo/mkdocs-material:8.0.5",
             "problemMatcher": {
                 "owner": "custom",
                 "pattern": {
@@ -14,7 +14,7 @@
                 "background": {
                     "activeOnStart": true,
                     "beginsPattern": ".*Building documentation.*",
-                    "endsPattern": ".*Start detecting changes.*"
+                    "endsPattern": ".*Documentation built in.*"
                 }
             }
         },

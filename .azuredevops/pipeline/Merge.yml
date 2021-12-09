@@ -10,7 +10,7 @@ pr: none
 
 variables:
   VmImageName: ubuntu-20.04
-  Python.Version: 3.x
+  Python.Version: 3.7
   Azure.ServiceConnectionId: a7c86f12-9f60-4544-a93d-4f8187d629e0
   Azure.WebAppName: mkdocs-sample
   Azure.ResourceGroupName: mkdocs-sample
@@ -35,10 +35,11 @@ stages:
             inputs:
               targetType: inline
               script: |
-                pip install mkdocs
-                pip install mkdocs-material
+                pip install -r ./docker/requirements.txt
+                pip install git+https://github.com/srymh/MkdocsTagPlugin.git#egg=mdoctag
+                python create_mkdocs_pages.py
+                python create_tag_pages.py
                 mkdocs build
-                ls ./site
 
           - task: PublishPipelineArtifact@1
             displayName: Publish Pipeline Artifact
