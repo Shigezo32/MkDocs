@@ -1,9 +1,8 @@
 ---
 title: チームリーダーシップ・アクションプログラム
 tags:
-    - 研修
     - TLAP
-description: チームリーダーシップ・アクションプログラムのトップページ。
+description: TLAP のトップページ。
 ---
 
 [チームリーダーシップ・アクションプログラム](https://www.ohmae.ac.jp/ex/teamleadership/){ target="_blank" }  
