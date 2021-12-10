@@ -1,4 +1,15 @@
-# Docker を利用して MagicOnion & .Net Core の開発環境を整える
+---
+title: Docker を利用して MagicOnion & .Net Core の開発環境を整える
+tags:
+    - Docker
+    - MagicOnion
+    - _.NET_Core
+description: 
+---
+
+!!! tip
+
+    2018年末に記載したドキュメントで内容が陳腐化しています。  
 
 ## はじめに
 

@@ -1,4 +1,14 @@
-# Dockerを利用してAngularの開発環境を整える
+---
+title: Docker を利用して Angular の開発環境を整える
+tags:
+    - Docker
+    - Angular
+description: 
+---
+
+!!! tip
+
+    2018年末に記載したドキュメントで内容が陳腐化しています。  
 
 ## はじめに
 

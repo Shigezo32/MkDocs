@@ -1,8 +1,19 @@
-# Docker を利用して Angular & ASP.NET Core の開発環境を整える
+---
+title: Docker を利用して Angular & ASP.NET Core の開発環境を整える
+tags:
+    - Docker
+    - Angular
+    - ASP.NET_Core
+description: 
+---
+
+!!! tip
+
+    2018年末に記載したドキュメントで内容が陳腐化しています。  
 
 ## はじめに
 
-Microsoft が提供している [ASP.NET Core で Angular プロジェクト テンプレートを使用する](https://docs.microsoft.com/ja-jp/aspnet/core/client-side/spa/angular?view=aspnetcore-2.1&tabs=visual-studio) を Docker で動作させるための手順です。  
+Microsoft が提供している [ASP.NET Core で  プロジェクト テンプレートを使用する](https://docs.microsoft.com/ja-jp/aspnet/core/client-side/spa/angular?view=aspnetcore-2.1&tabs=visual-studio) を Docker で動作させるための手順です。  
 
 ## 前提条件
 

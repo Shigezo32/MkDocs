@@ -1,4 +1,15 @@
-# MkDocsとAzure DevOpsでCI/CD環境を整える
+---
+title: MkDocs と AzureDevOps で CI/CD 環境を整える
+tags:
+    - MkDocs
+    - AzureDevOps
+    - CI/CD
+description: 
+---
+
+!!! tip
+
+    2018年末に記載したドキュメントで内容が陳腐化しています。  
 
 ## はじめに
 
