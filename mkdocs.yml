@@ -5,8 +5,8 @@ site_author: Shigezo.
 site_url: https://mkdocs-sample.azurewebsites.net/
 
 # Repository
-repo_name: Shigezo32/DocsSample
-repo_url: https://github.com/Shigezo32/DocsSample
+repo_name: Shigezo32/MkDocs
+repo_url: https://github.com/Shigezo32/MkDocs
 
 # Copyright
 copyright: Copyright &copy; 2018-2021 Shigezo.

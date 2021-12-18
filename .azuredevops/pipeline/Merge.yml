@@ -11,7 +11,7 @@ pr: none
 variables:
   VmImageName: ubuntu-20.04
   Python.Version: 3.7
-  Azure.ServiceConnectionId: a7c86f12-9f60-4544-a93d-4f8187d629e0
+  Azure.ServiceConnectionId: ed5c8521-2422-40b4-b571-6854da7f5720
   Azure.WebAppName: mkdocs-sample
   Azure.ResourceGroupName: mkdocs-sample
 
